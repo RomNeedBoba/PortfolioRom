@@ -1,0 +1,228 @@
+.big-box {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    border-bottom: 4px solid #007bff; /* Modern accent line */
+    position: relative;
+}
+
+/* Adding a subtle shadow */
+.big-box::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background: #007bff;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.roadmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative;
+    margin-bottom: 100px; /* Add margin to separate from footer */
+}
+
+.big-image-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.big-image {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.road-section {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 3900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.road {
+    position: absolute;
+    width: 14px;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+}
+
+.road::before {
+    content: "";    
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 100%;
+    background: repeating-linear-gradient(white, white 40px, black 40px, black 80px);
+    transform: translateX(-50%);
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 450px;
+    height: 350px;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure images are above the road */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid black;
+}
+
+.description {
+    position: absolute;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.image-container:nth-child(odd) .description {
+    right: 470px;
+    text-align: right;
+}
+
+.image-container:nth-child(even) .description {
+    left: 470px;
+    text-align: left;
+}
+
+.big-image-section {
+    text-align: center;
+    margin-bottom: 0; /* Remove bottom margin */
+    position: relative; /* Add relative positioning */
+    z-index: 2; /* Ensure it is above the road */
+}
+
+.big-image {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-bottom: -20px; /* Adjust margin to overlap with the road */
+}
+
+.road-section {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 3900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px; /* Adjust margin to overlap with the big image */
+    z-index: 1; /* Ensure it is below the big image */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .image-container {
+        width: 80%;
+        height: auto;
+    }
+
+    .description {
+        width: 80%;
+    }
+
+    .image-container:nth-child(odd) .description,
+    .image-container:nth-child(even) .description {
+        right: auto;
+        left: auto;
+        text-align: center;
+        top: 100%;
+        transform: translateY(10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .big-box {
+        font-size: 1.5rem;
+    }
+
+    .road-section {
+        height: auto;
+    }
+
+    .road {
+        width: 10px;
+    }
+
+    .road::before {
+        width: 4px;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .description {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-box {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .description {
+        font-size: 0.9em;
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 100%;
+        transform: translateY(10px);
+    }
+
+    .big-image-section {
+        padding: 10px;
+    }
+
+    .big-image {
+        width: 100%;
+        max-width: none;
+    }
+
+    .image-container:nth-child(odd) .description,
+    .image-container:nth-child(even) .description {
+        right: auto;
+        left: auto;
+        text-align: center;
+        top: 100%;
+        transform: translateY(10px);
+    }
+}

@@ -1,0 +1,30 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Ensure the footer is positioned relative to its normal position */
+    z-index: 10; /* Higher z-index to bring it on top */
+    background-color: #fff; /* Optional: Add a background color to make it more visible */
+    bottom: 0; /* Position the footer at the bottom */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 25px;
+    z-index: 11; /* Ensure footer content is above other elements */
+}
+
+.logo-wrapper {
+    display: flex;
+    gap: 60px;
+    z-index: 12; /* Ensure logo wrapper is above other elements */
+}
+
+.footer-logo {
+    width: 40px; /* Super small images */
+    height: auto;
+    z-index: 13; /* Ensure footer logo is above other elements */
+}
