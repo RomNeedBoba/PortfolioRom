@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
 import "./styles/global.css";
 import Home from "./components/Home";
@@ -28,10 +28,8 @@ function App() {
         <Activities />
         <Act2 />
       </div>
-      <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        {/* <Route path="/about" element={<About />} /> */}
-      </Routes>
+      {/* <Route path="/" element={<Home />} /> */}
+      {/* <Route path="/about" element={<About />} /> */}
       <Footer />
     </Router>
   );
